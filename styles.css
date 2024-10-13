@@ -1,0 +1,194 @@
+/* General Styles */
+body {
+    font-family: 'Roboto Mono', monospace; /* Use monospaced font for better readability */
+    background-color: #ffffff; /* Set background to white */
+    color: #333; /* Set text color to a dark gray for better readability */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 16px; /* Set base font size */
+    line-height: 1.6; /* Improve line height for better readability */
+}
+
+header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: white; /* Ensure header background is white */
+}
+
+.container {
+    position: relative;
+}
+
+h1 {
+    font-size: 4.5em; /* Increased size for the heading */
+    letter-spacing: 0.2em; /* Add some spacing for futuristic look */
+    margin: 0;
+    font-weight: 700;
+    color: #1abc9c; /* Futuristic teal for the heading */
+    text-transform: uppercase;
+}
+
+.tagline {
+    font-size: 1.8em; /* Slightly larger for emphasis */
+    margin-top: 10px; /* Space above */
+    color: #555; /* Darker grey for contrast */
+    font-style: italic; /* Italics for a stylish look */
+}
+
+.image-container {
+    margin-top: 20px;
+}
+
+.profile-img {
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px; /* No border */
+}
+
+nav {
+    margin-top: 20px; /* Space above the navigation */
+}
+
+.nav-links {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+    display: flex; /* Align links in a row */
+    justify-content: center; /* Center the navigation */
+}
+
+.nav-links li {
+    margin: 0 15px; /* Space between links */
+}
+
+.nav-links a {
+    text-decoration: none; /* Remove underline */
+    color: #1abc9c; /* Teal color for links */
+    font-size: 1.2em; /* Font size for links */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.nav-links a:hover {
+    color: #00bfff; /* Change color on hover */
+    text-shadow: 0 0 5px rgba(0, 191, 255, 0.5); /* Add glow effect on hover */
+}
+
+.btn {
+    display: inline-block;
+    background-color: #1abc9c; /* Teal for buttons */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effect */
+    font-family: 'Roboto Mono', monospace; /* Futuristic monospaced button text */
+    text-transform: uppercase;
+    margin-top: 20px; /* Space above the button */
+}
+
+.btn:hover {
+    background-color: #00bfff; /* Electric blue on button hover */
+    transform: scale(1.05); /* Slightly grow on hover */
+}
+
+.section {
+    padding: 60px 20px; /* Padding for each section */
+    background-color: #f9f9f9; /* Light grey background for contrast */
+}
+
+h2 {
+    font-size: 2.5em; /* Size for section headings */
+    margin-bottom: 20px; /* Space below the heading */
+    color: #1abc9c; /* Consistent teal color for section headings */
+}
+
+footer {
+    background-color: white; /* White footer background */
+    color: #333; /* Dark grey text for the footer */
+    text-align: center;
+    padding: 40px 0;
+    font-family: 'Roboto Mono', monospace; /* Monospaced footer text */
+    font-size: 1em; /* Size for footer text */
+}
+
+nav {
+    margin-left: auto;
+    display: flex; /* Use flexbox for layout */
+    flex-direction: row-reverse; /* Arrange items in reverse order */
+    /* align-items: center; Align items vertically centered */
+    justify-content: flex-end; /* Align items to the right */
+     /* margin-bottom: 30px;  */
+     margin-right: 75px;
+    z-index: 1000; /* Ensure it appears above other elements */
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+    display: flex; /* Align links in a row */
+}
+
+.nav-links li {
+    margin: 0 15px; /* Space between links */
+}
+
+.nav-links a {
+    text-decoration: none; /* Remove underline */
+    color: #1abc9c; /* Teal color for links */
+    font-size: 1.2em; /* Font size for links */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.nav-links a:hover {
+    color: #00bfff; /* Change color on hover */
+    text-shadow: 0 0 5px rgba(0, 191, 255, 0.5); /* Add glow effect on hover */
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none; /* Initially hide the hamburger */
+    font-size: 2em; /* Font size for the hamburger icon */
+    cursor: pointer; /* Cursor change on hover */
+}
+
+/* Show hamburger on smaller screens */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide navigation links by default */
+        flex-direction: column; /* Stack links vertically */
+        position: absolute; /* Position absolutely to overlay content */
+        top: 60px; /* Space below the hamburger */
+        right: 0; /* Align to the right */
+        background-color: white; /* Background for dropdown */
+        width: 100%; /* Full width */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
+    }
+
+    .nav-links li {
+        margin: 10px 0; /* Space between links */
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger on smaller screens */
+    }
+
+    .nav-visible {
+        display: flex; /* Show navigation when visible */
+    }
+}
+
+.nav-links li {
+    margin: 0 15px; /* Space between links */
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+.nav-links li:hover {
+    transform: scale(1.2); /* Scale the item up on hover */
+}
+

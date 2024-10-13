@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandeep Pansari - Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Typed.js Script -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <!-- Custom Cursor CSS -->
+    <style>
+        /* Custom Cursor Styles */
+        
+        .cursor {
+            position: fixed;
+            width: 20px; /* Cursor width */
+            height: 20px; /* Cursor height */
+            border-radius: 50%; /* Round shape */
+            background: black; /* Black color */
+            pointer-events: none; /* Prevent interference with other elements */
+            transform: translate(-50%, -50%); /* Center the cursor */
+            z-index: 9999; /* Ensure it's above other elements */
+            transition: background 0.1s ease; /* Smooth transition for color */
+        }
+    </style>
+</head>
+<body>
+    <!-- SVG for the trailing effect -->
+    <svg class="trail" style="position: fixed; top: 0; left: 0; pointer-events: none;">
+        <path fill="none" stroke="red" stroke-width="2" />
+    </svg>
+
+    <!-- Header Section with Photo -->
+    <header>
+        <div class="hamburger" id="hamburger">
+            &#9776; <!-- Unicode character for hamburger icon -->
+        </div>
+        <!-- Navigation Links -->
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="container">
+            <h1>Hi, I am <span class="name">Sandeep Pansari</span></h1>
+            <p class="typed-text">
+                <span id="typed"></span> <!-- Typed.js will inject text here -->
+            </p>
+            <div class="image-container">
+                <img src="myImg.png" alt="Sandeep Pansari" class="profile-img">
+            </div>
+
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>Enthusiastic and dedicated fresher seeking software development opportunities in web development, with a focus on the MERN stack. Proficient in frontend and backend technologies, and experienced in solving data structures and algorithms problems.</p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2>Skills</h2>
+            <ul>
+                <li>Programming Languages: C, C++, Java, Javascript, Typescript</li>
+                <li>Tools & Technologies: HTML, CSS, Bootstrap, ReactJS, Next.js, Redux, NodeJS, Express, MongoDB, REST, Git, Postman</li>
+                <li>Expertise: Data Structures & Algorithms, OOP, Database Concepts, Operating Systems</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2>Projects</h2>
+            <ul>
+                <li>
+                    <h3>E-Commerce Project</h3>
+                    <p>Spearheaded a secure E-Commerce platform using the MERN stack. Improved payment transactions and user satisfaction.</p>
+                    <a href="https://github.com/sandeep18p/proshop-demo" target="_blank" class="btn">GitHub</a> 
+                    <a href="https://proshop2-qcd4.onrender.com/" target="_blank" class="btn">Live Demo</a>
+                </li>
+                <li>
+                    <h3>Group Chat Application</h3>
+                    <p>Developed a dynamic real-time chat app using Socket.io and implemented secure password hashing.</p>
+                    <a href="https://github.com/sandeep18p/whatsapp_be" target="_blank" class="btn">GitHub</a>
+                </li>
+                <li>
+                    <h3>Restaurant Website</h3>
+                    <p>Built a responsive restaurant website with a smooth scrolling design and screen reader accessibility.</p>
+                    <a href="https://github.com/sandeep18p/Pizza" target="_blank" class="btn">GitHub</a> 
+                    <a href="https://sandeep18p.github.io/Pizza/index_final_1.html" target="_blank" class="btn">Live Demo</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p>Email: <a href="mailto:sandeep.pansari98@gmail.com">sandeep.pansari98@gmail.com</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/sandeep-p-60745829b" target="_blank">Sandeep Pansari</a></p>
+            <p>GitHub: <a href="https://github.com/sandeep18p" target="_blank">GitHub Profile</a></p>
+            <p>Leetcode: <a href="https://leetcode.com/sandeep18_/" target="_blank">Leetcode Profile</a></p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Sandeep Pansari. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Typed.js animation
+        var typed = new Typed('#typed', {
+            strings: ["Frontend Developer", "Fullstack Developer", "Backend Developer"],
+            typeSpeed: 50,  // Speed of typing
+            backSpeed: 30,   // Speed of erasing
+            backDelay: 1000, // Delay before backspacing starts
+            loop: true       // Loop the animation
+        });
+
+        // Trailing SVG effect
+        const svg = document.querySelector('svg.trail');
+        const path = svg.querySelector('path');
+
+        let points = [];
+        let segments = 100;
+        let mouse = {
+            x: 0,
+            y: 0,
+        };
+
+        const move = (event) => {
+            const x = event.clientX;
+            const y = event.clientY;
+
+            mouse.x = x;
+            mouse.y = y;
+
+            if (points.length === 0) {
+                for (let i = 0; i < segments; i++) {
+                    points.push({
+                        x: x,
+                        y: y,
+                    });
+                }
+            }
+        };
+
+        const anim = () => {
+            // starting point
+            let px = mouse.x;
+            let py = mouse.y;
+
+            points.forEach((p, index) => {
+                p.x = px;
+                p.y = py;
+
+                let n = points[index + 1];
+
+                if (n) {
+                    px = px - (p.x - n.x) * 0.6;
+                    py = py - (p.y - n.y) * 0.6;
+                }
+            });
+
+            path.setAttribute('d', `M ${points.map((p) => `${p.x} ${p.y}`).join(` L `)}`);
+
+            requestAnimationFrame(anim);
+        };
+
+        const resize = () => {
+            const ww = window.innerWidth;
+            const wh = window.innerHeight;
+
+            svg.style.width = ww + 'px';
+            svg.style.height = wh + 'px';
+            svg.setAttribute('viewBox', `0 0 ${ww} ${wh}`);
+        };
+
+        document.addEventListener('mousemove', move);
+        window.addEventListener('resize', resize);
+
+        anim();
+        resize();
+    </script>
+</body>
+</html>
