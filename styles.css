@@ -200,21 +200,36 @@ footer {
 }
 
 /* Media query to stack elements below 658px */
-@media (max-width: 658px) {
+@media (max-width: 558px) {
     .image-container {
         flex-direction: column; /* Stack vertically */
         align-items: center; /* Center align items */
+        /* flex-direction: column; */
+        /* height: 100%; */
     }
 
     .one, .two {
         width: 100%; /* Full width on small screens */
         padding-left: 0; /* Reset padding */
+      
+        font-size: smaller;
+        text-align: center;
+    }
+    .one{
+        order: 2;
     }
 
     .two {
+        order: 1;
         display: flex; /* Center the image */
         justify-content: center; /* Center image horizontally */
-        margin-top: 20px; /* Optional spacing */
+       margin-bottom: 0px;
+      
+    }
+    .profile-img{
+        height: 300px;
+        object-fit: contain;
+        border: 1px solid black;
     }
 }
 
@@ -340,4 +355,27 @@ h1 {
         margin-left: 64px;
         margin-top: 120px;
     }
+
 }
+
+@media (max-width: 596px) { 
+    h1{
+        margin-top: 186px;
+        text-align: center;
+        margin-left: auto;
+        font-size: 32px;
+    }
+    .typed-text{
+        text-align: center !important;
+        margin-left: auto;
+    }
+   header{
+    margin-bottom: 120px;
+   }
+}
+@media (max-width: 432px) { 
+    h1{
+        margin-top: 303px;
+        
+
+     }}
