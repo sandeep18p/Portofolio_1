@@ -192,3 +192,8 @@ nav {
     transform: scale(1.2); /* Scale the item up on hover */
 }
 
+@media (max-width: 850px) { 
+  .jiha{
+    font-size: 32px;
+   }
+}
